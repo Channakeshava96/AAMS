@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AICTE Activity Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2>Welcome to User Dashboard</h2>
+    <form action="/user/add" method="POST" enctype="multipart/form-data" class="mt-4">
+      <div class="mb-3">
+        <label for="activityName" class="form-label">Activity Name</label>
+        <input type="text" class="form-control" id="activityName" name="activityName" required>
+      </div>
+      <div class="mb-3">
+        <label for="activityPoints" class="form-label">Activity Points</label>
+        <input type="number" class="form-control" id="activityPoints" name="activityPoints" required>
+      </div>
+      <div class="mb-3">
+        <label for="certificate" class="form-label">Upload Certificate</label>
+        <input type="file" class="form-control" id="certificate" name="certificate" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Activity</button>
+    </form>
+
+    <h3 class="mt-5">Your Activities</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Activity Name</th>
+          <th>Points</th>
+          <th>Status</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populate user activities dynamically via backend -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
